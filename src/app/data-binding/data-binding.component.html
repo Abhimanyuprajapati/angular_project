@@ -1,0 +1,30 @@
+<div>
+    <h1>data binding in angular </h1>
+    <strong>One way data binding</strong>
+
+    <h1>1. interpolation </h1>
+
+    <p>{{name}} </p>
+    <p>{{text}}</p>
+
+    <h1>2. Property binding </h1>
+
+    <input type="text" id="name" [value]="name">
+
+    <img [src]="imageUrl" [alt]="text" width="300" height="250">
+
+
+    <h1>Event binding</h1>
+
+    <button (click)="onSave()">save</button>
+
+    <select name="name" id="name" (change)="onChange()">
+        <option value="countery">countery</option>
+        <option value="countery1">countery1</option>
+        <option value="countery2">countery2</option>
+        <option value="countery3">countery3</option>
+        <option value="countery4">countery4</option>
+        <option value="countery5">countery5</option>
+    </select>
+
+</div>
