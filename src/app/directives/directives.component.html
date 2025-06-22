@@ -1,0 +1,33 @@
+<p>directives works!</p>
+
+<button class="btn btn-primary">save me</button>
+
+<div class="row text-center">
+
+    <div class="col-12 m-3">
+<b>Example of *ngIf vs &#64;If()</b>
+    </div>
+</div>
+
+<div class="row text-center">
+
+    <div class="col-4">
+        <div (click)="onClick()">
+<input type="checkbox" >Terms and condition
+        </div>
+        <div *ngIf="isChecked">
+<button class="btn btn-success">submit</button>
+
+        </div>
+    </div>
+      <div class="col-4">
+
+    </div>
+      <div class="col-4">
+
+        </div>
+
+</div>
+
+<!-- <app-data-binding></app-data-binding>  // this is for data binding component -->
+
