@@ -2,58 +2,186 @@
 
 <div>
   <h2>There are three type of directives</h2>
-  <strong>
-    1. Component Directives
-  </strong>
-  <br>
-  <strong>
-    2. Structure Directives
-  </strong>
-  <br>
-  <strong>
-    3. Attribute Directives
-  </strong>
+  <strong> 1. Component Directives </strong>
+  <br />
+  <strong> 2. Structure Directives </strong>
+  <br />
+  <strong> 3. Attribute Directives </strong>
 </div>
 
 <div class="row text-center">
+  <div class="col-12 m-3">
+    <b>Example of *ngIf vs &#64;If()</b>
+  </div>
+</div>
 
-    <div class="col-12 m-3">
-<b>Example of *ngIf vs &#64;If()</b>
+<div class="row text-center">
+  <h3>this is for *ngIf e.g</h3>
+  <div class="col-4">
+    <div (click)="onClick()"><input type="checkbox" />Terms and condition</div>
+    <div *ngIf="isChecked">
+      <button class="btn btn-success">submit</button>
     </div>
+  </div>
+  <div class="col-4">
+    <div *ngIf="isInputField">
+      <input type="text" value="learning angular" />
+    </div>
+    <button class="btn btn-primary m-2" (click)="show()">show</button>
+    <button class="btn btn-danger" (click)="hide()">hide</button>
+  </div>
+  <div class="col-4">
+    <input type="text" [(ngModel)]="inputValue1" /> <br />
+    <input type="text" [(ngModel)]="inputValue2" />
+
+    <div *ngIf="inputValue1 === inputValue2">
+      <h4>Both model is equal</h4>
+    </div>
+    <div *ngIf="inputValue1 !== inputValue2">
+      <h4>Both model is not equal</h4>
+    </div>
+  </div>
 </div>
 
 <div class="row text-center">
+  <h3>this is for &#64;if e.g</h3>
 
     <div class="col-4">
-        <div (click)="onClick()">
-<input type="checkbox" >Terms and condition
-        </div>
-        <div *ngIf="isChecked">
-<button class="btn btn-success">submit</button>
-
-        </div>
+    <div (click)="onClick()"><input type="checkbox" />Terms and condition</div>
+    @if(isChecked){
+    <div>
+      <button class="btn btn-success">submit</button>
     </div>
-      <div class="col-4">
-        <div *ngIf="isInputField">
-          <input type="text" value="learning angular">
-        </div>
-<button class="btn btn-primary m-2" (click)="show()">show</button>
-<button class="btn btn-danger" (click)="hide()">hide</button>
+    }
 
+
+@if(isInputField){
+  <div>
+      <input type="text" value="learning angular" />
     </div>
-      <div class="col-4">
-<input type="text" [(ngModel)]="inputValue1"> <br>
-<input type="text" [(ngModel)]="inputValue2">
+}
+   
+    <button class="btn btn-primary m-2" (click)="show()">show</button>
+    <button class="btn btn-danger" (click)="hide()">hide</button>
+    
+  </div>
 
-<div *ngIf="inputValue1 === inputValue2">
+
+  <div class="col-4">
+    <input type="text" [(ngModel)]="inputValue1" /> <br />
+    <input type="text" [(ngModel)]="inputValue2" />
+
+    @if(inputValue1 === inputValue2){
   <h4>Both model is equal</h4>
-</div>
-<div *ngIf="inputValue1 !== inputValue2">
-  <h4>Both model is not equal</h4>
-</div>
-        </div>
+    }
+    @if(inputValue1 !== inputValue2){
+ <h4>Both model is not equal</h4>
+    }
+  </div>
 
+</div>
+
+<!-- learning ngfor vs @For -->
+  <h1>*ngfor   vs    &#64;for()</h1>
+<div class="row">
+
+
+  <div class=" clo m-4">
+    <select name="" id="" class="p-2">
+      <option [value]="emp.name" *ngFor="let emp of employees">{{emp.name}}</option>
+    </select>
+  </div>
+
+  <div class="col">
+    <table class="table table-bordered w-50">
+      <thead>
+        <th>name</th>
+        <th>age</th>
+        <th>position</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+<td>{{emp.name}}</td>
+<td>{{emp.age}}</td>
+<td>{{emp.position}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col">
+ <ul>
+    <li *ngFor="let emp of employees">
+      {{emp.name}} - {{emp.age}} - {{emp.position}}
+    </li>
+  </ul>
+  </div>
+ 
+</div>
+
+
+<!-- *ngSwitch   vs  @switch -->
+
+<h1>
+   *ngSwitch   vs  &#64;switch()
+</h1> 
+
+<div class="row text-center">
+
+  <div class="col-12 m-4">
+<button class="btn btn-success m-2" (click)="set(1)">1 grade</button>
+<button class="btn btn-warning  m-2" (click)="set(2)">2 grade</button>
+<button class="btn btn-primary m-2" (click)="set(3)">3 grade</button>
+
+<div [ngSwitch]="grade">
+<div *ngSwitchCase="1">
+  <h3>you are in 1 grade</h3>
+</div>
+<div *ngSwitchCase="2">
+  <h3>you are in 2 grade</h3>
+</div>
+<div *ngSwitchCase="3">
+  <h3>you are in 3 grade</h3>
+</div>
+<div *ngSwitchDefault>
+  <h3>you are in default grade</h3>
+</div>
+
+
+<h3 style="color: red;">this is by using &#64;switch </h3>
+<div>
+  @switch(grade){
+    @case(1){
+      <h3>you are in 1 grade</h3>
+    }
+    @case(2){
+      <h3>you are in 2 grade</h3>
+    }
+    @case(3){
+      <h3>you are in 3 grade</h3>
+    }
+    @default{
+      <h3>you are in default grade</h3>
+    }
+  }
+</div>
+
+
+
+</div>
+  </div>
+
+   <div class="col-4">
+
+  </div>
+
+   <div class="col-4">
+
+  </div>
+
+  <br>
+  <br><br>
+  <br>
 </div>
 
 <!-- <app-data-binding></app-data-binding>  // this is for data binding component -->
-

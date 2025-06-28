@@ -32,6 +32,21 @@ this.isInputField = true;
 this.isInputField = false;
   }
 
-  
+  // ngfor vs @For
 
+  employees:any[] =[
+    { name: "John", age: 30, position: "Developer" },
+    { name: "Jane", age: 25, position: "Designer" },
+    { name: "Mike", age: 35, position: "Manager" },
+    { name: "Sara", age: 28, position: "Analyst" }
+  ]
+
+
+  companyList: string[]= ["atoms", "teclicious", "google", "micro"]
+
+  // *ngSwitch vs @Switch
+  grade : number = 0;
+  set(x:number){
+    this.grade = x;
+  }
 }
