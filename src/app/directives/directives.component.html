@@ -1,6 +1,19 @@
-<p>directives works!</p>
+<h1>Directives Works!</h1>
 
-<button class="btn btn-primary">save me</button>
+<div>
+  <h2>There are three type of directives</h2>
+  <strong>
+    1. Component Directives
+  </strong>
+  <br>
+  <strong>
+    2. Structure Directives
+  </strong>
+  <br>
+  <strong>
+    3. Attribute Directives
+  </strong>
+</div>
 
 <div class="row text-center">
 
@@ -21,10 +34,23 @@
         </div>
     </div>
       <div class="col-4">
+        <div *ngIf="isInputField">
+          <input type="text" value="learning angular">
+        </div>
+<button class="btn btn-primary m-2" (click)="show()">show</button>
+<button class="btn btn-danger" (click)="hide()">hide</button>
 
     </div>
       <div class="col-4">
+<input type="text" [(ngModel)]="inputValue1"> <br>
+<input type="text" [(ngModel)]="inputValue2">
 
+<div *ngIf="inputValue1 === inputValue2">
+  <h4>Both model is equal</h4>
+</div>
+<div *ngIf="inputValue1 !== inputValue2">
+  <h4>Both model is not equal</h4>
+</div>
         </div>
 
 </div>
