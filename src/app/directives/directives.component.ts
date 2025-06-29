@@ -49,4 +49,13 @@ this.isInputField = false;
   set(x:number){
     this.grade = x;
   }
+
+  // Attribute Directive
+
+  isTextColor: string= "text-danger";
+
+changeColor(color: string){
+  this.isTextColor= color;
+}
+
 }
