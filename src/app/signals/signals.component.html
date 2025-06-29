@@ -1,0 +1,31 @@
+<div>
+    <h1>Learning signals in Angular</h1>
+
+
+<div class=" text-center">
+<p>this counter is {{isCounter()}}</p>
+
+<p>first approach 
+
+ <br />
+      <code>
+        increment() &#123;
+      this.isCounter.set(this.isCounter() + 1);
+    &#125;
+      </code>   
+</p>
+
+<p>second approach
+    <br>
+      <code>
+        increment() &#123;
+      this.isCounter.update((value) => value + 1);
+    &#125;
+      </code>
+
+      </p>
+
+<button class="btn btn-primary m-3" (click)="increment()">Increment Counter</button>
+</div>
+    
+</div>
