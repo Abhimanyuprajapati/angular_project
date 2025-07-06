@@ -13,7 +13,7 @@ import { SignalsComponent } from './signals/signals.component';
     // UserComponent, 
     // DataBindingComponent, 
     // DirectivesComponent,
-    SignalsComponent
+    // SignalsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
